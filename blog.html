@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Learning and Tutorials">
+    <title>Blog | Tran Thanh Huong (Kylie)</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#publications" class="nav-link">Publications</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <main class="blog-main">
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Blog</h1>
+                <p class="blog-subtitle">Sharing knowledge about coding, machine learning, and technology</p>
+            </div>
+
+            <!-- Admin Panel (hidden by default) -->
+            <div id="adminPanel" class="admin-panel" style="display: none;">
+                <h2>Admin Panel</h2>
+                <button id="toggleAdminBtn" class="btn btn-secondary" onclick="toggleAdminForm()">Add New Post</button>
+                
+                <form id="postForm" class="post-form" style="display: none;">
+                    <input type="hidden" id="postId" value="">
+                    <div class="form-group">
+                        <label for="postTitle">Title</label>
+                        <input type="text" id="postTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postExcerpt">Excerpt (Short description)</label>
+                        <textarea id="postExcerpt" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">Content (Markdown supported)</label>
+                        <textarea id="postContent" rows="15" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postTags">Tags (comma separated)</label>
+                        <input type="text" id="postTags" placeholder="e.g., Python, Machine Learning, Tutorial">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Post</button>
+                        <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Blog Posts List -->
+            <div id="blogList" class="blog-list">
+                <!-- Posts will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Single Post View -->
+            <div id="postView" class="post-view" style="display: none;">
+                <button class="back-btn" onclick="showBlogList()">← Back to Blog</button>
+                <article id="postContent" class="post-content">
+                    <!-- Post content will be loaded here -->
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Tran Thanh Huong (Kylie). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
+
