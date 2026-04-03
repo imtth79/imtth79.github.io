@@ -6,16 +6,17 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-light: #9ca3af;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --border-color: #e5e7eb;
-    --link-color: #2563eb;
-    --link-hover: #1d4ed8;
+    /* Theme inspired by Sage/Mint/Gold palette */
+    --primary-color: #D4AF37; /* Gold */
+    --primary-hover: #B8922B;
+    --text-primary: #333333;
+    --text-secondary: #2E4F4F; /* Deep sage */
+    --text-light: #5F7B7B;
+    --bg-primary: #FCFAFA; /* Pearl white */
+    --bg-secondary: #E0F2F1; /* Soft mint */
+    --border-color: #D6E7E6;
+    --link-color: #2E4F4F; /* Deep sage */
+    --link-hover: #D4AF37; /* Gold */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -29,6 +30,17 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Global links styling */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -39,7 +51,7 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(252, 250, 250, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
