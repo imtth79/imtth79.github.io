@@ -727,3 +727,93 @@ a:hover {
     }
 }
 
+/* ------------------------------
+   Subtle animations: occasional breeze + gold glow
+   ------------------------------ */
+
+.main-content,
+.blog-main {
+    position: relative;
+    overflow: hidden; /* keeps the breeze sweep contained */
+}
+
+/* "Gió chạy qua" - a very low-opacity gold gradient sweep */
+.main-content::before,
+.blog-main::before {
+    content: '';
+    position: absolute;
+    top: -35%;
+    left: -45%;
+    width: 65%;
+    height: 170%;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(212, 175, 55, 0) 0%,
+        rgba(212, 175, 55, 0.20) 50%,
+        rgba(212, 175, 55, 0) 100%
+    );
+    transform: skewX(-12deg);
+    opacity: 0;
+    animation: breezeSweep 18s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Ensure actual content is above the sweep layer */
+.main-content > .container,
+.blog-main > .container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes breezeSweep {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%) skewX(-12deg);
+    }
+    70% {
+        opacity: 0;
+        transform: translateX(-30%) skewX(-12deg);
+    }
+    76% {
+        opacity: 0.10;
+    }
+    88% {
+        opacity: 0.05;
+        transform: translateX(210%) skewX(-12deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(210%) skewX(-12deg);
+    }
+}
+
+/* Occasional soft gold shadow pulse for main headings */
+.section-heading {
+    animation: goldGlowPulse 22s ease-in-out infinite;
+}
+
+@keyframes goldGlowPulse {
+    0%,
+    60% {
+        box-shadow: none;
+    }
+    66% {
+        box-shadow: 0 0 18px rgba(212, 175, 55, 0.22);
+    }
+    78% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.14);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .main-content::before,
+    .blog-main::before,
+    .section-heading {
+        animation: none;
+    }
+}
+
