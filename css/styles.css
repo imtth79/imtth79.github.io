@@ -309,6 +309,59 @@ a:hover {
     padding-bottom: 0.5rem;
 }
 
+.subsection {
+    margin-bottom: 2.5rem;
+}
+
+.subsection-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.resource-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.resource-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resource-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.resource-description {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.resource-note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.section-placeholder {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
 /* News Section */
 .news-list {
     display: flex;
